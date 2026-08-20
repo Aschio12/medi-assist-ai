@@ -1,23 +1,29 @@
-import { Activity, Users, Settings, MessageSquare } from 'lucide-react';
+import { Activity, Users, Settings, Cpu, Grid } from 'lucide-react';
 export function Sidebar() {
   return (
-    <aside className="w-20 lg:w-64 bg-white border-r border-slate-200 flex flex-col items-center lg:items-start py-6 shadow-sm z-10">
-      <div className="px-4 lg:px-6 mb-10 flex items-center gap-3">
-        <Activity className="h-8 w-8 text-medical-600" />
-        <span className="hidden lg:block font-bold text-xl tracking-tight text-slate-800">MediAssist</span>
+    <aside className="w-20 lg:w-64 glass-panel border-r-white/10 flex flex-col items-center lg:items-start py-8 z-10 rounded-r-3xl my-4 ml-4">
+      <div className="px-4 lg:px-6 mb-12 flex items-center gap-3">
+        <div className="p-2 bg-neon-500/20 rounded-xl border border-neon-500/30">
+          <Activity className="h-6 w-6 text-neon-400" />
+        </div>
+        <span className="hidden lg:block font-bold text-xl tracking-wide text-white">MediAssist</span>
       </div>
-      <nav className="flex-1 w-full space-y-2 px-3">
-        <a href="#" className="flex items-center gap-3 px-3 py-3 bg-medical-50 text-medical-700 rounded-lg transition-colors">
-          <Users className="h-5 w-5" />
-          <span className="hidden lg:block font-medium">Patients</span>
+      <nav className="flex-1 w-full space-y-3 px-4">
+        <a href="#" className="flex items-center gap-3 px-4 py-3 bg-neon-500/10 text-neon-300 rounded-xl border border-neon-500/20 transition-all neon-glow group">
+          <Grid className="h-5 w-5 text-neon-400" />
+          <span className="hidden lg:block font-medium">Overview</span>
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
-          <MessageSquare className="h-5 w-5" />
-          <span className="hidden lg:block font-medium">AI Copilot</span>
+        <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
+          <Users className="h-5 w-5" />
+          <span className="hidden lg:block font-medium">Portfolio</span>
+        </a>
+        <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
+          <Cpu className="h-5 w-5" />
+          <span className="hidden lg:block font-medium">AI Insights</span>
         </a>
       </nav>
-      <div className="mt-auto px-3 w-full">
-        <a href="#" className="flex items-center gap-3 px-3 py-3 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
+      <div className="mt-auto px-4 w-full">
+        <a href="#" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
           <Settings className="h-5 w-5" />
           <span className="hidden lg:block font-medium">Settings</span>
         </a>
