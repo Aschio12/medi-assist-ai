@@ -1,24 +1,29 @@
 export function PatientProfile() {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex items-start gap-6">
-      <div className="h-20 w-20 rounded-2xl bg-slate-100 object-cover overflow-hidden flex-shrink-0">
-        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Patient" />
-      </div>
-      <div className="flex-1">
-        <div className="flex justify-between items-start">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-800">Robert Chen</h2>
-            <p className="text-slate-500 text-sm mt-1">DOB: 12/04/1965 (58y) • Male • MRN: #892-441-A</p>
-          </div>
-          <span className="px-3 py-1 bg-warning-100 text-warning-700 rounded-full text-xs font-semibold uppercase tracking-wider">
-            High Fall Risk
-          </span>
+    <div className="glass-panel rounded-3xl p-7 flex items-center justify-between">
+      <div>
+        <h2 className="text-sm font-medium text-zinc-400 tracking-wide uppercase">Patient Overview</h2>
+        <div className="mt-2 flex items-baseline gap-4">
+          <h1 className="text-4xl font-bold text-white tracking-tight">Robert Chen</h1>
+          <span className="text-neon-400 text-sm font-medium neon-text-glow">+ Stable</span>
         </div>
-        <div className="grid grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-100">
-          <div><p className="text-xs text-slate-400 uppercase tracking-wider">Blood Type</p><p className="font-semibold text-slate-700">O Positive</p></div>
-          <div><p className="text-xs text-slate-400 uppercase tracking-wider">Height</p><p className="font-semibold text-slate-700">5'10"</p></div>
-          <div><p className="text-xs text-slate-400 uppercase tracking-wider">Weight</p><p className="font-semibold text-slate-700">185 lbs</p></div>
-          <div><p className="text-xs text-slate-400 uppercase tracking-wider">Allergies</p><p className="font-semibold text-alert-600">Penicillin</p></div>
+        <p className="text-zinc-500 text-sm mt-3 flex items-center gap-3">
+          <span>DOB: 12/04/1965</span>
+          <span className="w-1 h-1 rounded-full bg-zinc-700"></span>
+          <span>Male</span>
+          <span className="w-1 h-1 rounded-full bg-zinc-700"></span>
+          <span>MRN: #892-441-A</span>
+        </p>
+      </div>
+      <div className="flex gap-4">
+        <div className="glass-panel px-6 py-4 rounded-2xl flex flex-col items-center justify-center">
+          <span className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Active Meds</span>
+          <span className="text-2xl font-bold text-white">14</span>
+        </div>
+        <div className="glass-panel px-6 py-4 rounded-2xl flex flex-col items-center justify-center border-neon-500/30 relative overflow-hidden">
+          <div className="absolute inset-0 bg-neon-500/5"></div>
+          <span className="text-zinc-400 text-xs uppercase tracking-wider mb-1 relative z-10">Health Score</span>
+          <span className="text-2xl font-bold text-neon-400 neon-text-glow relative z-10">92%</span>
         </div>
       </div>
     </div>
