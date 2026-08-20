@@ -1,18 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-medical-50: #f0fdfa;
-  --color-medical-100: #ccfbf1;
-  --color-medical-500: #14b8a6;
-  --color-medical-700: #0f766e;
-  --color-medical-900: #134e4a;
+  --color-neon-300: #bef264;
+  --color-neon-400: #a3e635;
+  --color-neon-500: #84cc16;
   
-  --color-alert-500: #ef4444;
-  --color-warning-500: #f59e0b;
+  --color-dark-surface: rgba(255, 255, 255, 0.03);
+  --color-dark-border: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+    @apply bg-[#050505] text-zinc-100 font-sans antialiased selection:bg-neon-500/30 selection:text-neon-300;
+  }
+}
+
+/* Custom Utilities for Glassmorphism */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+  .neon-glow {
+    @apply shadow-[0_0_15px_rgba(163,230,53,0.4)];
+  }
+  .neon-text-glow {
+    text-shadow: 0 0 10px rgba(163, 230, 53, 0.5);
   }
 }
