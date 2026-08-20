@@ -1,22 +1,37 @@
-import { AlertTriangle } from 'lucide-react';
 export function RiskScore() {
   return (
-    <div className="bg-gradient-to-br from-alert-50 to-white rounded-xl border border-alert-100 p-5 shadow-sm relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-alert-100 rounded-bl-full -mr-4 -mt-4 opacity-50"></div>
-      <div className="flex items-start justify-between relative z-10">
-        <div>
-          <h3 className="font-semibold text-alert-900 flex items-center gap-2">
-            <AlertTriangle className="h-4 w-4 text-alert-500" />
-            Sepsis Risk Alert
-          </h3>
-          <p className="text-sm text-alert-700 mt-1">Elevated HR and recent infection history.</p>
-        </div>
-        <div className="text-right">
-          <span className="text-2xl font-bold text-alert-600">18%</span>
-          <p className="text-[10px] text-alert-500 uppercase tracking-wider font-semibold">Probability</p>
+    <div className="glass-panel p-6 rounded-3xl h-[300px] flex flex-col justify-between relative overflow-hidden group">
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-neon-500/5 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+      <div>
+        <h3 className="font-semibold text-zinc-200">AI Insights & Strategy</h3>
+        <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
+          Patient's cardiovascular stability improved by 8% this week. We recommend maintaining current Beta-blocker dosage.
+        </p>
+      </div>
+      
+      <div className="flex justify-center items-center flex-1 my-4">
+        {/* Mock Circular Gauge */}
+        <div className="relative h-32 w-32 rounded-full border-[6px] border-zinc-800 flex items-center justify-center">
+          <svg className="absolute inset-0 h-full w-full -rotate-90">
+            <circle cx="64" cy="64" r="61" fill="none" stroke="#a3e635" strokeWidth="6" strokeDasharray="383" strokeDashoffset="95" className="drop-shadow-[0_0_8px_rgba(163,230,53,0.6)]" />
+          </svg>
+          <div className="text-center">
+            <span className="text-zinc-500 text-[10px] uppercase tracking-wider block mb-1">Safety Margin</span>
+            <span className="text-3xl font-bold text-white">82</span>
+          </div>
         </div>
       </div>
-      <button className="w-full mt-4 bg-white border border-alert-200 text-alert-700 text-sm font-medium py-2 rounded-lg hover:bg-alert-50 transition-colors shadow-sm">View Protocol Guidelines</button>
+      
+      <div className="flex justify-between border-t border-white/5 pt-4">
+        <div>
+          <p className="text-[10px] text-zinc-500 uppercase">Risk Level</p>
+          <p className="text-sm font-medium text-zinc-200">Low</p>
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] text-zinc-500 uppercase">Next Review</p>
+          <p className="text-sm font-medium text-zinc-200">14 Days</p>
+        </div>
+      </div>
     </div>
   );
 }
