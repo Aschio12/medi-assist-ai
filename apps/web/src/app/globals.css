@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-300: #bef264;
-  --color-neon-400: #a3e635;
-  --color-neon-500: #84cc16;
+  --color-neon-300: #67e8f9; /* Cyber Cyan */
+  --color-neon-400: #22d3ee;
+  --color-neon-500: #06b6d4;
   
   --color-dark-surface: rgba(255, 255, 255, 0.03);
   --color-dark-border: rgba(255, 255, 255, 0.08);
@@ -21,9 +21,9 @@
     @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
   .neon-glow {
-    @apply shadow-[0_0_15px_rgba(163,230,53,0.4)];
+    @apply shadow-[0_0_15px_rgba(34,211,238,0.4)];
   }
   .neon-text-glow {
-    text-shadow: 0 0 10px rgba(163, 230, 53, 0.5);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
   }
 }
