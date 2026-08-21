@@ -46,3 +46,7 @@ async def redact_text(request: RedactRequest):
         redacted_text=anonymized_result.text,
         items_redacted=len(results)
     )
+
+@app.get("/api/v1/health")
+def health_check():
+    return {"status": "ok", "service": "privacy-gateway", "presidio_models_loaded": True}
