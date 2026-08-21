@@ -40,7 +40,7 @@ export function RiskScore() {
             <circle 
               cx="50" cy="50" r={radius} 
               fill="transparent" 
-              stroke="#22d3ee" 
+              stroke="#a3e635" 
               strokeWidth="8"
               strokeLinecap="round"
               strokeDasharray={circumference} 
