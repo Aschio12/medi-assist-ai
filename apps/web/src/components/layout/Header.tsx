@@ -15,7 +15,7 @@ export function Header() {
           <div className="h-9 w-9 rounded-full bg-zinc-800 border border-zinc-700 overflow-hidden">
             <img src="https://i.pravatar.cc/150?img=11" alt="Doctor" className="h-full w-full object-cover opacity-90" />
           </div>
-          <p className="text-sm font-medium text-zinc-200">Dr. Sarah J.</p>
+          <div className="flex flex-col"><p className="text-sm font-medium text-zinc-200">Dr. Sarah J.</p><a href="/auth/login" className="text-[10px] text-zinc-500 hover:text-neon-400">Secure Logout</a></div>
         </div>
       </div>
     </header>
