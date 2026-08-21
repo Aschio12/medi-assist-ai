@@ -31,8 +31,8 @@ export function VitalsChart() {
           <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="colorHeartRate" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#a3e635" stopOpacity={0.4}/>
-                <stop offset="95%" stopColor="#a3e635" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#22d3ee" stopOpacity={0.4}/>
+                <stop offset="95%" stopColor="#22d3ee" stopOpacity={0}/>
               </linearGradient>
               <linearGradient id="colorO2" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2}/>
@@ -51,11 +51,11 @@ export function VitalsChart() {
               type="monotone" 
               dataKey="heartRate" 
               name="Heart Rate (bpm)"
-              stroke="#a3e635" 
+              stroke="#22d3ee" 
               strokeWidth={3}
               fillOpacity={1} 
               fill="url(#colorHeartRate)" 
-              activeDot={{ r: 6, fill: '#a3e635', stroke: '#050505', strokeWidth: 3 }}
+              activeDot={{ r: 6, fill: '#22d3ee', stroke: '#050505', strokeWidth: 3 }}
               style={{ filter: 'drop-shadow(0px 4px 8px rgba(163,230,53,0.4))' }}
             />
             <Area 
