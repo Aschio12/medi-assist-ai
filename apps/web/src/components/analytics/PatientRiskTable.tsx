@@ -2,7 +2,7 @@ export function PatientRiskTable() {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-sm text-left">
-        <thead className="text-xs text-zinc-500 border-b border-white/5 uppercase tracking-widest">
+        <thead className="text-xs text-neon-400 font-bold tracking-widest border-b border-white/5 uppercase tracking-widest">
           <tr>
             <th className="pb-4 font-semibold">Patient</th>
             <th className="pb-4 font-semibold">Room</th>

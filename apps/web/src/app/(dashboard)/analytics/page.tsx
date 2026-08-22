@@ -24,7 +24,7 @@ export default function AnalyticsPage() {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        <div className="lg:col-span-2 glass-panel rounded-3xl p-6 h-[400px]">
+        <div className="lg:col-span-2 glass-panel rounded-3xl p-6 h-[400px] border border-neon-500/30 neon-glow bg-gradient-to-br from-neon-500/5 to-transparent">
           <h3 className="font-semibold text-white mb-4">Ward 3: Aggregate Sepsis Risk Trajectory (24h)</h3>
           <RiskTrajectoryChart />
         </div>
@@ -36,7 +36,7 @@ export default function AnalyticsPage() {
         </div>
       </div>
       
-      <div className="glass-panel rounded-3xl p-6">
+      <div className="glass-panel rounded-3xl p-6 border-t border-neon-500/20">
         <h3 className="font-semibold text-white mb-4">Patient Stratification (Top Risk)</h3>
         <PatientRiskTable />
       </div>

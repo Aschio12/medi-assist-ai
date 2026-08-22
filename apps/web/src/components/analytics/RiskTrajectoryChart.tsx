@@ -15,7 +15,7 @@ export function RiskTrajectoryChart() {
         <AreaChart data={data}>
           <defs>
             <linearGradient id="riskColor" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#a3e635" stopOpacity={0.4}/>
+              <stop offset="5%" stopColor="#a3e635" stopOpacity={0.7}/>
               <stop offset="95%" stopColor="#a3e635" stopOpacity={0}/>
             </linearGradient>
             <linearGradient id="criticalColor" x1="0" y1="0" x2="0" y2="1">
@@ -30,7 +30,7 @@ export function RiskTrajectoryChart() {
             contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }}
             itemStyle={{ color: '#a3e635' }}
           />
-          <Area type="monotone" dataKey="risk" stroke="#a3e635" strokeWidth={3} fillOpacity={1} fill="url(#riskColor)" />
+          <Area type="monotone" dataKey="risk" stroke="#a3e635" strokeWidth={4} fillOpacity={1} fill="url(#riskColor)" />
           {/* Critical Threshold Line */}
           <line x1="0" y1="80" x2="100%" y2="80" stroke="#ef4444" strokeDasharray="5 5" strokeWidth={2} />
         </AreaChart>
