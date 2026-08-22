@@ -1,4 +1,4 @@
-import { Activity, Users, Settings, Cpu, Grid, Shield, Video } from 'lucide-react';
+import { Activity, Users, Settings, Cpu, Grid, Shield, Video, FileText } from 'lucide-react';
 export function Sidebar() {
   return (
     <aside className="w-20 lg:w-64 glass-panel border-r-white/10 flex flex-col items-center lg:items-start py-8 z-10 rounded-r-3xl my-4 ml-4">
@@ -30,6 +30,10 @@ export function Sidebar() {
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
           <span className="hidden lg:block font-medium">Telehealth</span>
+        </a>
+        <a href="/documents" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <FileText className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Documents</span>
         </a>
         <a href="/audit" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
           <Shield className="h-5 w-5" />
