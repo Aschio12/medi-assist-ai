@@ -38,3 +38,7 @@ async def process_document(file: UploadFile = File(...)):
         structured_tables=tables,
         icd10_tags=tags
     )
+
+@app.get("/api/v1/health")
+def health_check():
+    return {"status": "ok", "service": "ocr-engine", "tesseract_available": True}
