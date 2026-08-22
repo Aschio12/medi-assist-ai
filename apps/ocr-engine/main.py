@@ -13,3 +13,28 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {"status": "OCR Engine Online"}
+
+from models.schema import ExtractionResponse
+from core.ocr import perform_ocr
+from core.table_parser import extract_tables
+from core.icd10_tagger import tag_clinical_entities
+
+@app.post("/api/v1/process-document", response_model=ExtractionResponse)
+async def process_document(file: UploadFile = File(...)):
+    contents = await file.read()
+    
+    # 1. OCR Extraction
+    raw_text = perform_ocr(contents)
+    
+    # 2. Semantic Table Parsing
+    tables = extract_tables(raw_text)
+    
+    # 3. ICD-10 Tagging
+    tags = tag_clinical_entities(raw_text)
+    
+    return ExtractionResponse(
+        filename=file.filename,
+        raw_text=raw_text,
+        structured_tables=tables,
+        icd10_tags=tags
+    )
