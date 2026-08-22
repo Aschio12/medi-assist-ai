@@ -31,3 +31,7 @@ async def chat_with_copilot(request: ChatRequest):
         response=result["text"],
         fhir_sources_used=result["sources"]
     )
+
+@app.get("/api/v1/health")
+def health_check():
+    return {"status": "ok", "service": "ai-engine", "llm_connected": True}
