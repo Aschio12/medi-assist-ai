@@ -45,3 +45,7 @@ async def predict_sepsis(data: SepsisFeatures):
         risk_level=level,
         contributing_factors=factors if factors else ["None"]
     )
+
+@app.get("/api/v1/health")
+def health_check():
+    return {"status": "ok", "service": "ml-engine", "model_loaded": True}
