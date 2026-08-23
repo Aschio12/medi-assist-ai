@@ -1,3 +1,4 @@
+'use client';
 import { UserScan } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { ClinicalMetricsOverlay } from '@/components/twin/ClinicalMetricsOverlay';
