@@ -1,5 +1,5 @@
 'use client';
-import { UserScan } from 'lucide-react';
+import { Scan } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { ClinicalMetricsOverlay } from '@/components/twin/ClinicalMetricsOverlay';
 import { OrganSelector } from '@/components/twin/OrganSelector';
@@ -16,7 +16,7 @@ export default function DigitalTwinPage() {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl font-bold text-white tracking-wide flex items-center gap-3">
-            <UserScan className="h-6 w-6 text-neon-400" />
+            <Scan className="h-6 w-6 text-neon-400" />
             3D Digital Twin (James Wilson)
           </h1>
           <p className="text-zinc-400 text-sm mt-2">Real-time anatomical mapping powered by telemetry and ML inference.</p>
