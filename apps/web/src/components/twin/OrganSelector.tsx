@@ -1,4 +1,4 @@
-import { Settings2, Activity, Lungs, Brain } from 'lucide-react';
+import { Settings2, Activity, Wind, Cpu } from 'lucide-react';
 
 export function OrganSelector() {
   return (
