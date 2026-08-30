@@ -77,7 +77,7 @@ const FALLBACK_CITATIONS: EvidenceCitation[] = [
     id: 2,
     guideline_name: "Surviving Sepsis Campaign Guidelines 2021",
     organization: "SCCM / ESICM",
-    year=2021,
+    year: 2021,
     section: "§7.1 Fluid Stewardship & Crystalloids",
     target_sentence: "For patients with sepsis-induced hypoperfusion or septic shock, we suggest using balanced crystalloids (e.g. Plasma-Lyte or Lactated Ringer's) over 0.9% normal saline for fluid resuscitation.",
     full_context_paragraph: "Recommendation 23: For adults with sepsis or septic shock, we suggest using balanced crystalloids rather than normal saline for resuscitation to reduce hyperchloremic metabolic acidosis and acute kidney injury risk (SMART and SALT-ED trials). Resuscitation should target 30 mL/kg within the first 3 hours.",
