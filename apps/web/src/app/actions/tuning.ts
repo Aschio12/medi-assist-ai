@@ -54,7 +54,7 @@ export interface LoRAModelCheckpoint {
   final_loss: number;
   medqa_usmle_score_percent: number;
   base_model_score_percent: number;
-  is_active_in_production: bool;
+  is_active_in_production: boolean;
   download_size_mb: number;
 }
 
