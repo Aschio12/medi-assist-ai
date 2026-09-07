@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "concurrently \"npm run dev --workspace=apps/web\" \"cd apps/privacy-gateway && uvicorn main:app --port 8000 --reload\" \"cd apps/ocr-engine && uvicorn main:app --port 8001 --reload\" \"cd apps/ml-engine && uvicorn main:app --port 8002 --reload\" \"cd apps/ai-engine && uvicorn main:app --port 8003 --reload\" \"cd apps/agent-council && uvicorn main:app --port 8004 --reload\" \"cd apps/vision-engine && uvicorn main:app --port 8005 --reload\" \"cd apps/billing-engine && uvicorn main:app --port 8006 --reload\" \"cd apps/copilot-engine && uvicorn main:app --port 8007 --reload\" \"cd apps/fhir-bridge && uvicorn main:app --port 8008 --reload\" \"cd apps/patient-gateway && uvicorn main:app --port 8009 --reload\" \"cd apps/ehr-gateway && uvicorn main:app --port 8010 --reload\" \"cd apps/risk-engine && uvicorn main:app --port 8011 --reload\" \"cd apps/tuning-engine && uvicorn main:app --port 8012 --reload\" \"cd apps/eval-engine && uvicorn main:app --port 8013 --reload\"",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
