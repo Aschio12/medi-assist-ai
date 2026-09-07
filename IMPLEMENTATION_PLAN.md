@@ -106,7 +106,7 @@ This is the revised, highly sophisticated roadmap for a massive, feature-rich Me
 
 ## Part 5: Continuous Learning, Quality & Enterprise Scaling
 
-### Phase 17: Human-in-the-Loop (HITL) & Fine-Tuning Pipeline
+### Phase 17: Human-in-the-Loop (HITL) & Fine-Tuning Pipeline (COMPLETED)
 *   **Thumbs Up/Down Feedback:** Doctors can correct the AI's output in the UI.
 *   **Data Lake Pipeline:** Corrected outputs are sanitized and stored in a data lake.
 *   **Automated LoRA Fine-Tuning:** Use the corrected dataset to automatically trigger a fine-tuning run to make the open-source LLM smarter over time.
