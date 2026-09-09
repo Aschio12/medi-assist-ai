@@ -47,7 +47,7 @@ export function EvaluationHeaderHUD({ report }: EvaluationHeaderHUDProps) {
                   PIPELINE {report.pipeline_status}
                 </span>
               </div>
-              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white mt-1">
+              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent mt-1">
                 Clinical Benchmarking & Toxicity Guardrails
               </h1>
             </div>

@@ -43,7 +43,7 @@ export function NightlyPipelineRunner({ onPipelineComplete }: NightlyPipelineRun
         <button 
           onClick={handleRun}
           disabled={isRunning}
-          className="flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+          className="flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-neon-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.6)] disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
         >
           {isRunning ? (
             <>
