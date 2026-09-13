@@ -3,7 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { SecurityHeaderHUD } from '@/components/security/SecurityHeaderHUD';
 import { RateLimitMonitor } from '@/components/security/RateLimitMonitor';
-import { Loader2, ServerCrash, ShieldCheck, FileCheck } from 'lucide-react';
+import { WafThreatLog } from '@/components/security/WafThreatLog';
+import { NeMoGuardrailsVisualizer } from '@/components/security/NeMoGuardrailsVisualizer';
+import { Loader2, ShieldCheck, FileCheck } from 'lucide-react';
 
 export default function SecurityDashboard() {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,32 +53,8 @@ export default function SecurityDashboard() {
         {/* Left Column: Rate Limits & Guardrails */}
         <div className="lg:col-span-1 flex flex-col gap-6">
           <RateLimitMonitor />
-          
-          <div className="glass-panel p-6 rounded-3xl border-white/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                <ServerCrash className="h-5 w-5 text-emerald-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">NeMo Guardrails</h2>
-                <p className="text-xs text-zinc-400">Prompt injection and jailbreak screening.</p>
-              </div>
-            </div>
-            <div className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-3">
-               <div className="flex items-center justify-between">
-                 <span className="text-xs font-mono text-zinc-400">Flow: Reject Diagnosis</span>
-                 <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 rounded-full border border-emerald-500/30">ACTIVE</span>
-               </div>
-               <div className="flex items-center justify-between">
-                 <span className="text-xs font-mono text-zinc-400">Flow: Reject Jailbreak</span>
-                 <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 rounded-full border border-emerald-500/30">ACTIVE</span>
-               </div>
-               <div className="flex items-center justify-between">
-                 <span className="text-xs font-mono text-zinc-400">Flow: Redact PHI</span>
-                 <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 rounded-full border border-emerald-500/30">ACTIVE</span>
-               </div>
-            </div>
-          </div>
+          <WafThreatLog />
+          <NeMoGuardrailsVisualizer />
         </div>
 
         {/* Right Column: SOC 2 & HIPAA Compliance Sync */}
