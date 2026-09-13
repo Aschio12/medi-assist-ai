@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { globalRateLimit, authRateLimit, aiGenerationRateLimit } from '@/lib/rate-limit';
 
-export async function middleware(request: NextRequest) {
-  const ip = request.headers.get('x-forwarded-for') ?? request.ip ?? '127.0.0.1';
+export async function proxy(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for') ?? '127.0.0.1';
   const path = request.nextUrl.pathname;
 
   // 1. Auth Rate Limiting (Strict)
