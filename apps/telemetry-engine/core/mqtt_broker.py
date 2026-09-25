@@ -24,6 +24,8 @@ class SimulatedMqttClient:
             spo2_value = random.randint(94, 100)
             heart_rate = random.randint(70, 110)
             
+            from core.anomaly_detector import anomaly_detector
+            
             payload = {
                 "patient_id": "ICU-BED-04",
                 "device": "Phillips_IntelliVue_MX800",
@@ -34,6 +36,10 @@ class SimulatedMqttClient:
                     "hr": heart_rate
                 }
             }
+            
+            # Run real-time ML anomaly detection
+            anomaly_result = anomaly_detector.analyze_window(payload)
+            payload["ml_analysis"] = anomaly_result
             
             # Send to WebSockets
             await self.broadcast_callback(payload)
