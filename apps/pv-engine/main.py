@@ -21,10 +21,9 @@ class AdeResponse(BaseModel):
 def health_check():
     return {"status": "healthy", "service": "pv-engine"}
 
+from core.ade_extractor import ade_pipeline
+
 @app.post("/analyze-ade", response_model=AdeResponse)
 def analyze_adverse_drug_events(note: ClinicalNote):
-    # Route to internal ClinicalBERT extractor (to be implemented)
-    return {
-        "entities": [],
-        "requires_medwatch": False
-    }
+    result = ade_pipeline.extract_entities(note.note_text)
+    return result
