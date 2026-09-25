@@ -133,3 +133,8 @@ This is the revised, highly sophisticated roadmap for a massive, feature-rich Me
 *   **Adverse Drug Event (ADE) Detection:** NLP pipelines to automatically detect potential adverse drug reactions in telehealth transcripts and doctor notes.
 *   **FDA MedWatch Integration:** Automated generation of FDA Form 3500 (MedWatch) for reporting severe adverse events.
 *   **Real-World Evidence (RWE) Dashboard:** Visualizing post-market surveillance data for specific drug interactions across the hospital network.
+
+### Phase 22: IoT Medical Device (IoMT) & Real-Time Wearable Telemetry (COMPLETED)
+*   **High-Throughput Ingestion:** Utilize MQTT and WebSockets to ingest continuous high-frequency vital signs from ICU monitors and consumer wearables (Apple Watch, Fitbit).
+*   **Time-Series Anomaly Detection:** Deploy real-time ML models (LSTMs or Isolation Forests) to detect early warning signs of sepsis or cardiac arrhythmias (e.g., AFib) before they become critical.
+*   **Live ICU Command Center:** Sub-second frontend updates rendering real-time ECG waveforms and SpO2 trends for remote patient monitoring.
