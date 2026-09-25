@@ -1,5 +1,5 @@
 import { Activity, Users, Settings, Cpu, Grid, Shield, Video, FileText, TrendingUp, Scan, Bot, Network, Eye, ReceiptText, Split, HeartHandshake, Workflow, Gauge, SlidersHorizontal, Microscope, MessageSquare,
-  Globe
+  Globe, HeartPulse
 } from 'lucide-react';
 export function Sidebar() {
   return (
@@ -44,6 +44,10 @@ export function Sidebar() {
         <a href="/pharmacovigilance" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Activity className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
           <span className="hidden lg:block font-medium">Pharmacovigilance</span>
+        </a>
+        <a href="/telemetry" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <HeartPulse className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Live Telemetry</span>
         </a>
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
