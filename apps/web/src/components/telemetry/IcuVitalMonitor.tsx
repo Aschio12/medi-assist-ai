@@ -40,8 +40,11 @@ export function IcuVitalMonitor() {
               <p className="text-xs text-zinc-400">Live IoMT Telemetry</p>
             </div>
           </div>
-          <div className="text-[10px] font-mono text-neon-400 bg-neon-500/10 px-2 py-1 rounded-lg border border-neon-500/20">
-            {device}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-mono text-zinc-400">BATTERY: 84%</span>
+            <div className="text-[10px] font-mono text-neon-400 bg-neon-500/10 px-2 py-1 rounded-lg border border-neon-500/20">
+              {device}
+            </div>
           </div>
         </div>
       </div>
