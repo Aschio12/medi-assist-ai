@@ -26,6 +26,19 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
+from core.mqtt_broker import SimulatedMqttClient
+
+mqtt_client = SimulatedMqttClient(broadcast_callback=manager.broadcast)
+
+@app.on_event("startup")
+async def startup_event():
+    # Start the simulated MQTT listener in a background task
+    asyncio.create_task(mqtt_client.start_listening())
+
+@app.on_event("shutdown")
+def shutdown_event():
+    mqtt_client.stop()
+
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "telemetry-engine"}
