@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pydantic
+pyvcf3
+pandas
+requests
