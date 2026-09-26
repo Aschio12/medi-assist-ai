@@ -1,0 +1,18 @@
+replicaCount: 3
+
+image:
+  repository: 123456789012.dkr.ecr.us-east-1.amazonaws.com/medi-assist/genomics-engine
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 8016
+
+resources:
+  limits:
+    cpu: "2"
+    memory: "4Gi"
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
