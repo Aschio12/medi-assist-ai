@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+pydicom
+monai
+trimesh
+scikit-image
+numpy
+networkx
