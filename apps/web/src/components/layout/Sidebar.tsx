@@ -1,5 +1,5 @@
 import { Activity, Users, Settings, Cpu, Grid, Shield, Video, FileText, TrendingUp, Scan, Bot, Network, Eye, ReceiptText, Split, HeartHandshake, Workflow, Gauge, SlidersHorizontal, Microscope, MessageSquare,
-  Globe, HeartPulse, Dna
+  Globe, HeartPulse, Dna, Box
 } from 'lucide-react';
 export function Sidebar() {
   return (
@@ -52,6 +52,10 @@ export function Sidebar() {
         <a href="/genomics" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Dna className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
           <span className="hidden lg:block font-medium">Precision Genomics</span>
+        </a>
+        <a href="/spatial" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <Box className="h-5 w-5 group-hover:text-purple-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Spatial Computing XR</span>
         </a>
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
