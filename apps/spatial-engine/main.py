@@ -13,7 +13,20 @@ class DicomUploadRequest(BaseModel):
 def health_check():
     return {"status": "healthy", "service": "spatial-engine"}
 
+from core.dicom_to_mesh import mesh_segmenter
+from core.surgical_planner import surgical_planner
+
 @app.post("/api/spatial/reconstruct")
 def reconstruct_3d_mesh(req: DicomUploadRequest):
-    # This endpoint orchestrates DICOM -> MONAI -> Marching Cubes -> A* Surgical Paths
-    pass
+    # 1. Run AI Segmentation and Mesh Generation
+    mesh_data = mesh_segmenter.generate_mesh(req.dicom_url, req.target_organ)
+    
+    # 2. Calculate optimal surgical pathways
+    surgical_plan = surgical_planner.calculate_optimal_path(req.target_organ)
+    
+    return {
+        "status": "success",
+        "patient_id": req.patient_id,
+        "mesh": mesh_data,
+        "surgical_plan": surgical_plan
+    }
