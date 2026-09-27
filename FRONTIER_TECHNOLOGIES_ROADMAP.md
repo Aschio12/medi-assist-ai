@@ -13,7 +13,7 @@
 
 ---
 
-## Phase 26: Quantum Machine Learning (QML) Drug Discovery
+## Phase 26: Quantum Machine Learning (QML) Drug Discovery (COMPLETED)
 **Objective:** Leverage hybrid quantum-classical computing to bypass the limitations of classical supercomputers in molecular simulation.
 
 *   **Quantum-Classical Optimization:** Integrate PennyLane and Qiskit. Complex molecular binding affinity equations are offloaded to simulated quantum circuits.
