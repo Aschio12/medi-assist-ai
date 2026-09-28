@@ -21,10 +21,13 @@ class DeploymentRequest(BaseModel):
     target_site: str
     swarm_size: int = 10000
 
+from core.swarm_pathfinder import swarm_pathfinder
+from core.micro_surgery import micro_surgery_controller
+
 @app.post("/api/nanobot/deploy")
 def deploy_swarm(req: DeploymentRequest):
-    # Initializes the RL Pathfinding for the vascular route
-    pass
+    result = swarm_pathfinder.calculate_route(req.target_site, req.swarm_size)
+    return {"status": "success", "data": result}
 
 @app.websocket("/ws/swarm-telemetry")
 async def swarm_telemetry(websocket: WebSocket):
