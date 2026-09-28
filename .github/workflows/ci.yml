@@ -1,0 +1,54 @@
+name: MediAssist CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next.js Web App
+        run: npm run build --prefix apps/web
+      # - name: Run Web Tests
+      #   run: npm test --prefix apps/web
+
+  test-python-microservices:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [
+          'bci-engine', 
+          'quantum-engine', 
+          'crispr-engine', 
+          'nanobot-engine',
+          'imaging-gen-engine'
+        ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f apps/${{ matrix.service }}/requirements.txt ]; then pip install -r apps/${{ matrix.service }}/requirements.txt; fi
+          pip install pytest httpx
+      - name: Test with pytest
+        run: |
+          if [ -d apps/${{ matrix.service }}/tests ]; then
+            pytest apps/${{ matrix.service }}/tests/
+          else
+            echo "No tests found for ${{ matrix.service }}"
+          fi
