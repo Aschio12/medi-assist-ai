@@ -101,6 +101,10 @@ export function Sidebar() {
           <Network className="h-5 w-5 group-hover:text-cyan-400 transition-colors" />
           <span className="hidden lg:block font-medium">Federated Learning</span>
         </a>
+        <a href="/dicom-pacs" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <Box className="h-5 w-5 group-hover:text-cyan-400 transition-colors" />
+          <span className="hidden lg:block font-medium">DICOM PACS Engine</span>
+        </a>
 
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
