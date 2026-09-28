@@ -23,12 +23,15 @@ class SearchRequest(BaseModel):
 class ParseRequest(BaseModel):
     criteria_text: str
 
+from core.nlp_parser import nlp_parser
+from core.vector_db import vector_db
+
 @app.post("/api/trials/search")
 def vector_search_trials(req: SearchRequest):
-    # Simulated FAISS/Pinecone vector search
-    pass
+    results = vector_db.semantic_search(req.query, req.top_k)
+    return {"status": "success", "results": results}
 
 @app.post("/api/trials/parse")
 def parse_criteria(req: ParseRequest):
-    # Simulated SpaCy/BERT Named Entity Recognition
-    pass
+    result = nlp_parser.parse_criteria(req.criteria_text)
+    return result
