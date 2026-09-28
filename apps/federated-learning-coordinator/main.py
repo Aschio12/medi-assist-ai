@@ -21,12 +21,14 @@ class EdgeWeightPayload(BaseModel):
     encrypted_weights: List[float]
     sample_size: int
 
+from core.weight_aggregator import fed_aggregator
+
 @app.post("/api/federated/sync-weights")
 def receive_edge_weights(payload: EdgeWeightPayload):
-    # Simulated receipt of weights from a hospital edge node
-    pass
+    success = fed_aggregator.register_weights(payload.node_id, payload.encrypted_weights, payload.sample_size)
+    return {"status": "success", "registered": success}
 
 @app.post("/api/federated/aggregate")
 def perform_fedavg_aggregation():
-    # Simulated Federated Averaging
-    pass
+    result = fed_aggregator.perform_fedavg()
+    return result
