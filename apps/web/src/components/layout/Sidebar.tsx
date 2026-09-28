@@ -97,6 +97,10 @@ export function Sidebar() {
           <ShieldAlert className="h-5 w-5 group-hover:text-red-400 transition-colors" />
           <span className="hidden lg:block font-medium">Drug Toxicity AI</span>
         </a>
+        <a href="/federated-learning" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <Network className="h-5 w-5 group-hover:text-cyan-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Federated Learning</span>
+        </a>
 
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
