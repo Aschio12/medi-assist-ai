@@ -1,5 +1,5 @@
 import { Activity, Users, Settings, Cpu, Grid, Shield, Video, FileText, TrendingUp, Scan, Bot, Network, Eye, ReceiptText, Split, HeartHandshake, Workflow, Gauge, SlidersHorizontal, Microscope, MessageSquare,
-  Globe, HeartPulse, Dna, Box, Hexagon, BrainCircuit, Image as ImageIcon, Scissors
+  Globe, HeartPulse, Dna, Box, Hexagon, BrainCircuit, Image as ImageIcon, Scissors, Rocket
 } from 'lucide-react';
 export function Sidebar() {
   return (
@@ -76,6 +76,10 @@ export function Sidebar() {
         <a href="/crispr" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Scissors className="h-5 w-5 group-hover:text-lime-400 transition-colors" />
           <span className="hidden lg:block font-medium">CRISPR Gene Editing</span>
+        </a>
+        <a href="/nanobots" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <Rocket className="h-5 w-5 group-hover:text-orange-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Nanobot Swarms</span>
         </a>
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
