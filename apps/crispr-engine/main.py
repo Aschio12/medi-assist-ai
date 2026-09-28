@@ -19,10 +19,13 @@ class CRISPRRequest(BaseModel):
     target_sequence: str
     pam_sequence: str = "NGG" # SpCas9 PAM
 
+from core.grna_designer import grna_designer
+from core.off_target_analyzer import off_target_analyzer
+
 @app.post("/api/crispr/design-grna")
 def design_grna(req: CRISPRRequest):
-    # Simulates DeepCRISPR on-target efficacy prediction
-    pass
+    result = grna_designer.design_candidates(req.target_sequence, req.pam_sequence)
+    return {"status": "success", "data": result}
 
 class OffTargetRequest(BaseModel):
     grna_sequence: str
@@ -30,5 +33,5 @@ class OffTargetRequest(BaseModel):
 
 @app.post("/api/crispr/off-target")
 def predict_off_targets(req: OffTargetRequest):
-    # Simulates genome-wide off-target mismatch scoring
-    pass
+    result = off_target_analyzer.predict_mismatches(req.grna_sequence, req.genome_assembly)
+    return {"status": "success", "data": result}
