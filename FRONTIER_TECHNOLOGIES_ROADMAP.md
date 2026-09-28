@@ -31,7 +31,7 @@
 
 ---
 
-## Phase 28: Whole-Body Digital Twins (Bio-Simulation)
+## Phase 28: Generative AI for Medical Imaging (Diffusion Models) (COMPLETED)
 **Objective:** Build a multi-scale computational model of the human body to predict long-term disease progression and treatment reactions.
 
 *   **Physics-Informed Neural Networks (PINNs):** Create rigorous mathematical models of a patient's cardiovascular, metabolic, and respiratory systems.
