@@ -14,6 +14,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from core.mne_pipeline import mne_pipeline
+from core.neural_decoder import neural_decoder
+
+class EegEpochRequest(BaseModel):
+    patient_id: str
+    eeg_buffer_matrix: list
+
+@app.post("/api/bci/decode")
+def decode_eeg_epoch(req: EegEpochRequest):
+    features = mne_pipeline.extract_features(req.eeg_buffer_matrix)
+    prediction = neural_decoder.predict_seizure_risk(features["psd_features"])
+    
+    return {
+        "status": "success",
+        "patient_id": req.patient_id,
+        "features": features,
+        "prediction": prediction
+    }
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "bci-engine"}
