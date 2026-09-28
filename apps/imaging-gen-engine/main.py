@@ -21,10 +21,13 @@ class SyntheticImageRequest(BaseModel):
     pathology: str
     resolution: str = "512x512"
 
+from core.diffusion_model import latent_diffusion
+from core.super_resolution import super_resolution_model
+
 @app.post("/api/imaging-gen/synthesize")
 def generate_synthetic_image(req: SyntheticImageRequest):
-    # Simulates a Latent Diffusion Model (e.g., MONAI MAISI) generating a medical image
-    pass
+    result = latent_diffusion.generate(req.modality, req.anatomy, req.pathology, req.resolution)
+    return {"status": "success", "data": result}
 
 class SuperResolutionRequest(BaseModel):
     image_id: str
@@ -32,5 +35,5 @@ class SuperResolutionRequest(BaseModel):
 
 @app.post("/api/imaging-gen/super-resolve")
 def super_resolve_image(req: SuperResolutionRequest):
-    # Simulates a Diffusion-based Super-Resolution enhancement
-    pass
+    result = super_resolution_model.enhance(req.image_id, req.scale_factor)
+    return {"status": "success", "data": result}
