@@ -109,6 +109,10 @@ export function Sidebar() {
           <Dna className="h-5 w-5 group-hover:text-pink-400 transition-colors" />
           <span className="hidden lg:block font-medium">Bioinformatics</span>
         </a>
+        <a href="/edi-billing" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <FileText className="h-5 w-5 group-hover:text-indigo-400 transition-colors" />
+          <span className="hidden lg:block font-medium">EDI X12 Billing</span>
+        </a>
 
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
