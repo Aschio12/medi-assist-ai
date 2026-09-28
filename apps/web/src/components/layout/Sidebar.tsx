@@ -89,6 +89,10 @@ export function Sidebar() {
           <Database className="h-5 w-5 group-hover:text-blue-400 transition-colors" />
           <span className="hidden lg:block font-medium">HL7 FHIR Engine</span>
         </a>
+        <a href="/clinical-trials" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+          <Microscope className="h-5 w-5 group-hover:text-purple-400 transition-colors" />
+          <span className="hidden lg:block font-medium">Global Trials NLP</span>
+        </a>
 
         <a href="/telehealth" className="flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
           <Video className="h-5 w-5 group-hover:text-neon-400 transition-colors" />
