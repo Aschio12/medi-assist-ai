@@ -20,10 +20,12 @@ class RiskRequest(BaseModel):
     patient_drugs: List[str]
     patient_conditions: List[str]
 
+from core.risk_model import pv_risk_model
+
 @app.post("/api/pv/analyze-risk")
 def analyze_toxicity_risk(req: RiskRequest):
-    # Simulated risk modeling
-    pass
+    result = pv_risk_model.calculate_patient_risk(req.patient_drugs, req.patient_conditions)
+    return result
 
 @app.post("/api/pv/detect-signals")
 def detect_population_signals():
