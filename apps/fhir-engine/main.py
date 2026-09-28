@@ -72,3 +72,18 @@ def get_patient_everything(patient_id: str):
         entry=entries
     )
     return bundle
+
+from core.trial_matcher import trial_matcher
+from core.pharmacovigilance import pv_monitor
+
+@app.post("/api/fhir/Patient/{patient_id}/match-trials")
+def match_patient_trials(patient_id: str):
+    bundle = get_patient_everything(patient_id)
+    matches = trial_matcher.evaluate_patient(bundle.dict())
+    return {"status": "success", "matches": matches}
+
+@app.post("/api/fhir/Patient/{patient_id}/pv-scan")
+def scan_patient_pv(patient_id: str):
+    bundle = get_patient_everything(patient_id)
+    signals = pv_monitor.detect_signals(bundle.dict())
+    return {"status": "success", "signals": signals}
